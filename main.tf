@@ -610,6 +610,7 @@ resource "google_storage_bucket" "blog" {
   project       = google_project.my_project.project_id
   cors {
     origin          = ["*"]
+    # oak9: CORS configuration should only allow requests from trusted origins
     method          = ["GET", "HEAD", "PUT", "POST", "DELETE"]
     response_header = ["*"]
     max_age_seconds = 3600
